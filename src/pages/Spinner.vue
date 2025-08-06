@@ -1,14 +1,15 @@
 <template>
   <div class="spinner-page pastel-bg">
-    <h1 class="pastel-pink">Bhelle's Birthday Bonanza</h1>
-    <label for="invitee" class="pastel-red">Select your name:</label>
-    <select v-model="selectedInvitee" id="invitee" class="pastel-purple-border">
+    <h1>Bhelle's Birthday Bonanza!!!</h1>
+    <h2 style="font-size: 2rem;" class="pastel-purple">Costume Spinner 🎉</h2>
+    <label for="invitee" class="pastel-grey">Select your name:</label>
+    <select v-model="selectedInvitee" id="invitee" class="pastel-red-border">
       <option disabled value="">-- Select --</option>
       <option v-for="invitee in invitees" :key="invitee" :value="invitee">
         {{ invitee }}
       </option>
     </select>
-    <button :disabled="!selectedInvitee" @click="spin" class="pastel-purple-btn">Spin!</button>
+    <button :disabled="!selectedInvitee" @click="spin" class="pastel-red-btn">Spin!</button>
     <div class="spinner-container">
       <!-- Spinner animation will go here -->
       <div v-if="spinning" class="spinner pastel-pink">Spinning...</div>
@@ -22,15 +23,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, watch } from 'vue';
 import { useReward } from 'vue-rewards';
 
 const invitees = [
-  'Seb', 'Bhelle', 'Ammar', 'Bianca', 'Imogen', 'Jo', 'Justin', 'Lola',
-  'Mylena', 'Renata', 'Rishika', 'Adriana', 'Elana', 'Greta', 'Gary'
+  'Seb', 'Bhelle', 'Jo', 'Gary', 'Ammar', 'Bianca', 'Imogen',  'Justin', 'Lola',
+  'Mylena', 'Renata', 'Rishika', 'Adriana', 'Elana', 'Greta'
 ];
 
 const characters = [
+  // Custom assignments for first four invitees
+  'Jay (The Inbetweeners): Track jacket, spiky hair, wild stories.',
+  'Marilyn Monroe: White dress, blonde curls, red lipstick.',
+  'Simon (The Inbetweeners): School uniform, awkward energy, "Briefcase wanker".',
+  'Will (The Inbetweeners): Glasses, suit, briefcase, sarcastic comments.',
+  // Remaining characters
   // 🇧🇷 Brazilian TV / Cinema Characters
   'Carminha (Avenida Brasil): Blonde wig, white outfit, sunglasses, rage.',
   'Nazaré Tedesco (Senhora do Destino): Floral blouse, haunted stare. Add meme math symbols.',
@@ -62,7 +69,7 @@ const characters = [
   'Anitta – “EnvolSchitt’sSportswear, hoop earrings, body oil sheen.'
 ];
 
-// Hardcoded mapping for now (1:1)
+// Simple 1:1 mapping
 const assignments: Record<string, string> = {};
 invitees.forEach((invitee, i) => {
   assignments[invitee] = characters[i % characters.length];
@@ -81,6 +88,11 @@ const { reward: confettiReward } = useReward(confettiId, 'confetti', {
   colors: [
     '#FF0080', '#7928CA', '#0078FF', '#00FFB8', '#FFD600', '#FF8C00', '#FF0000', '#00FF00', '#00FFFF', '#FF00FF'
   ]
+});
+
+watch(selectedInvitee, () => {
+  result.value = null;
+  spinning.value = false;
 });
 
 function spin() {
@@ -115,11 +127,17 @@ function spin() {
 .pastel-red {
   color: #ff7f7f;
 }
-.pastel-purple-btn {
-  background: #d1b3ff;
+.pastel-grey {
+  color: #888;
+}
+.pastel-purple {
+  color: #d1b3ff;
+}
+.pastel-red-btn {
+  background: #ff7f7f;
   color: #fff;
   font-weight: bold;
-  box-shadow: 0 0 10px #f3e6ff, 0 0 20px #f3e6ff;
+  box-shadow: 0 0 10px #ffeaea, 0 0 20px #ffeaea;
   border: none;
   border-radius: 8px;
   padding: 0.5rem 1.5rem;
@@ -128,12 +146,12 @@ function spin() {
   margin-bottom: 1rem;
   transition: background 0.3s, box-shadow 0.3s;
 }
-.pastel-purple-btn:hover:not(:disabled) {
-  background: #b39ddb;
-  box-shadow: 0 0 20px #e0cfff, 0 0 40px #e0cfff;
+.pastel-red-btn:hover:not(:disabled) {
+  background: #ff5252;
+  box-shadow: 0 0 20px #ffd6d6, 0 0 40px #ffd6d6;
 }
-.pastel-purple-border {
-  border: 2px solid #d1b3ff;
+.pastel-red-border {
+  border: 2px solid #ff7f7f;
   border-radius: 8px;
   padding: 0.5rem;
   font-size: 1rem;
