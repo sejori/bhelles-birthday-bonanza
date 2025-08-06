@@ -5,6 +5,7 @@
     "npm:@vue/tsconfig@0.7": "0.7.0_typescript@5.8.3_vue@3.5.18__typescript@5.8.3",
     "npm:typescript@~5.8.3": "5.8.3",
     "npm:vite@^7.0.4": "7.0.6_picomatch@4.0.3",
+    "npm:vue-rewards@^1.0.3": "1.0.3_vue@3.5.18__typescript@5.8.3_typescript@5.8.3",
     "npm:vue-tsc@^2.2.12": "2.2.12_typescript@5.8.3",
     "npm:vue@^3.5.17": "3.5.18_typescript@5.8.3"
   },
@@ -572,6 +573,12 @@
     "vscode-uri@3.1.0": {
       "integrity": "sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ=="
     },
+    "vue-rewards@1.0.3_vue@3.5.18__typescript@5.8.3_typescript@5.8.3": {
+      "integrity": "sha512-POR+JANyzj6K6HJWQXIStwAODMNt68prvrBHQybn/dnJV0X+swKDOv/c++u3jFN6R8rB6LdQJhrpiVWV0pef0Q==",
+      "dependencies": [
+        "vue"
+      ]
+    },
     "vue-tsc@2.2.12_typescript@5.8.3": {
       "integrity": "sha512-P7OP77b2h/Pmk+lZdJ0YWs+5tJ6J2+uOQPo7tlBnY44QqQSPYvS0qVT4wqDJgwrZaLe47etJLLQRFia71GYITw==",
       "dependencies": [
@@ -603,6 +610,7 @@
         "npm:@vue/tsconfig@0.7",
         "npm:typescript@~5.8.3",
         "npm:vite@^7.0.4",
+        "npm:vue-rewards@^1.0.3",
         "npm:vue-tsc@^2.2.12",
         "npm:vue@^3.5.17"
       ]
