@@ -27,16 +27,16 @@ import { ref, watch } from 'vue';
 import { useReward } from 'vue-rewards';
 
 const invitees = [
-  'Seb', 'Bhelle', 'Jo', 'Gary', 'Ammar', 'Bianca', 'Imogen',  'Justin', 'Lola',
+  'Bhelle', 'Jo', 'Gary', 'Seb', 'Ammar', 'Bianca', 'Imogen',  'Justin', 'Lola',
   'Mylena', 'Renata', 'Rishika', 'Adriana', 'Elana', 'Greta'
 ];
 
 const characters = [
   // Custom assignments for first four invitees
-  'Jay (The Inbetweeners): Track jacket, spiky hair, wild stories.',
   'Marilyn Monroe: White dress, blonde curls, red lipstick.',
   'Simon (The Inbetweeners): School uniform, awkward energy, "Briefcase wanker".',
   'Will (The Inbetweeners): Glasses, suit, briefcase, sarcastic comments.',
+  'Jay (The Inbetweeners): Track jacket, spiky hair, wild stories.',
   // Remaining characters
   // 🇧🇷 Brazilian TV / Cinema Characters
   'Carminha (Avenida Brasil): Blonde wig, white outfit, sunglasses, rage.',
